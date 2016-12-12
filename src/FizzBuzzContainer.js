@@ -1,17 +1,31 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-let FizzBuzzContainer = () => {
+let FizzBuzzContainer = ({ val, increment}) => {
   return (
-    <div>Hey dude!!! Your val is: { this.props.val}
+    <div>Hey dude!!! Your val is: { val }
       <div>
-        <button onClick={ this.props.incremement }>Inc</button>
+        <button onClick={ increment }>Inc</button>
       </div>
     </div>
     );
 }
 
-FizzBuzzContainer = connect()(FizzBuzzContainer);
+const mapStateToProps = (state) => ({
+  val: state.val
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  increment: () => {
+    dispatch({ type: 'INCREMENT'});
+  }
+});
+
+
+FizzBuzzContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(FizzBuzzContainer);
 
 export default FizzBuzzContainer;
 
