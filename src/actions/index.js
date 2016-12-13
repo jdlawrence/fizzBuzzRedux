@@ -1,3 +1,3 @@
-export const increment = () => ({
+export const incrementCount = () => ({
   type: 'INCREMENT',
 });
