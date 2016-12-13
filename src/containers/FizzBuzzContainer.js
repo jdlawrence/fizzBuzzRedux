@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { increment } from '../actions'
 
 let FizzBuzzContainer = ({ val, increment}) => {
   return (
@@ -17,7 +18,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   increment: () => {
-    dispatch({ type: 'INCREMENT'});
+    dispatch( increment());
   }
 });
 

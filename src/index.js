@@ -4,7 +4,7 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import App from './App';
 import './index.css';
-import counter from './reducers';
+import counter from './reducers/fizzBuzzReducer';
 
 // const store = createStore(counter);
 const store = createStore(counter, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
